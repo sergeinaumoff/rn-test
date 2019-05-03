@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= name %>. Тест по профессии <%= profa %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="icon" type="image/icon" href="/images/favicon.ico">
+</head>
+<body>
+<div class="container res-cont col-lg-7">
+    <div class="name-row row">
+        <div class="col-lg text-center text-muted">
+            <h5><%=name %> - <%=position %></h5>
+        </div>
+    </div>
+    <div class="testName-row row">
+        <div class="col-lg text-center">
+            <h3>Результаты теста по профессии <%= profa %></h3>
+        </div>
+    </div>
+    <div class="ticket-row row">
+        <div class="col-lg text-center">
+            <h5>Билет №<%=ticketNum%></h5>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg text-center">
+            <% if(res.countCorrect>=res.countQuestions-2){%>
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyNi42NjcgNDI2LjY2NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDI2LjY2NyA0MjYuNjY3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xMzguNjY3LDE5MmMxNy43MDcsMCwzMi0xNC4yOTMsMzItMzJzLTE0LjI5My0zMi0zMi0zMnMtMzIsMTQuMjkzLTMyLDMyUzEyMC45NiwxOTIsMTM4LjY2NywxOTJ6IiBmaWxsPSIjMDA4MDAwIi8+CgkJCTxwYXRoIGQ9Ik0yODgsMTkyYzE3LjcwNywwLDMyLTE0LjI5MywzMi0zMnMtMTQuMjkzLTMyLTMyLTMycy0zMiwxNC4yOTMtMzIsMzJTMjcwLjI5MywxOTIsMjg4LDE5MnoiIGZpbGw9IiMwMDgwMDAiLz4KCQkJPHBhdGggZD0iTTIxMy4zMzMsMjk4LjY2N2MtMzEuNDY3LDAtNTguNjY3LTE3LjI4LTczLjQ5My00Mi42NjdoLTM1LjczM2MxNy4wNjcsNDMuNjI3LDU5LjUyLDc0LjY2NywxMDkuMjI3LDc0LjY2NyAgICAgczkyLjE2LTMxLjA0LDEwOS4yMjctNzQuNjY3aC0zNS43MzNDMjcyLDI4MS4zODcsMjQ0LjgsMjk4LjY2NywyMTMuMzMzLDI5OC42Njd6IiBmaWxsPSIjMDA4MDAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTMuMTIsMEM5NS4zNiwwLDAsOTUuNTczLDAsMjEzLjMzM3M5NS4zNiwyMTMuMzMzLDIxMy4xMiwyMTMuMzMzYzExNy45NzMsMCwyMTMuNTQ3LTk1LjU3MywyMTMuNTQ3LTIxMy4zMzMgICAgIFMzMzEuMDkzLDAsMjEzLjEyLDB6IE0yMTMuMzMzLDM4NGMtOTQuMjkzLDAtMTcwLjY2Ny03Ni4zNzMtMTcwLjY2Ny0xNzAuNjY3UzExOS4wNCw0Mi42NjcsMjEzLjMzMyw0Mi42NjcgICAgIFMzODQsMTE5LjA0LDM4NCwyMTMuMzMzUzMwNy42MjcsMzg0LDIxMy4zMzMsMzg0eiIgZmlsbD0iIzAwODAwMCIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+            <h4 class="resCorrectAsw efont-weight-bold ">Тест пройден!</h4>
+            <%} else{%>
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQzOC41MzMgNDM4LjUzMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUzMyA0MzguNTMzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQwOS4xMzMsMTA5LjIwM2MtMTkuNjA4LTMzLjU5Mi00Ni4yMDUtNjAuMTg5LTc5Ljc5OC03OS43OTZDMjk1LjczNiw5LjgwMSwyNTkuMDU4LDAsMjE5LjI3MywwICAgIGMtMzkuNzgxLDAtNzYuNDcsOS44MDEtMTEwLjA2MywyOS40MDdjLTMzLjU5NSwxOS42MDQtNjAuMTkyLDQ2LjIwMS03OS44LDc5Ljc5NkM5LjgwMSwxNDIuOCwwLDE3OS40ODksMCwyMTkuMjY3ICAgIGMwLDM5Ljc4LDkuODA0LDc2LjQ2MywyOS40MDcsMTEwLjA2MmMxOS42MDcsMzMuNTkyLDQ2LjIwNCw2MC4xODksNzkuNzk5LDc5Ljc5OGMzMy41OTcsMTkuNjA1LDcwLjI4MywyOS40MDcsMTEwLjA2MywyOS40MDcgICAgczc2LjQ3LTkuODAyLDExMC4wNjUtMjkuNDA3YzMzLjU5My0xOS42MDIsNjAuMTg5LTQ2LjIwNiw3OS43OTUtNzkuNzk4YzE5LjYwMy0zMy41OTYsMjkuNDAzLTcwLjI4NCwyOS40MDMtMTEwLjA2MiAgICBDNDM4LjUzMywxNzkuNDg1LDQyOC43MzIsMTQyLjc5NSw0MDkuMTMzLDEwOS4yMDN6IE0zODcuNDM0LDI5MC4yMTNjLTkuNzA5LDIyLjU1Ni0yMi42OTYsNDEuOTctMzguOTY5LDU4LjI0NSAgICBjLTE2LjI3MSwxNi4yNjktMzUuNjg5LDI5LjI2LTU4LjI0NSwzOC45NjVjLTIyLjU1NSw5LjcxMi00Ni4yMDIsMTQuNTY0LTcwLjk0NiwxNC41NjRjLTI0Ljc0NCwwLTQ4LjM5MS00Ljg1My03MC45NDgtMTQuNTY0ICAgIGMtMjIuNTU0LTkuNzA1LTQxLjk3MS0yMi42OTYtNTguMjQ1LTM4Ljk2NWMtMTYuMjY5LTE2LjI3NS0yOS4yNTktMzUuNjg3LTM4Ljk3LTU4LjI0NSAgICBjLTkuNzA3LTIyLjU1Mi0xNC41NjItNDYuMjA2LTE0LjU2Mi03MC45NDZjMC0yNC43NDQsNC44NTQtNDguMzkxLDE0LjU2Mi03MC45NDhjOS43MDctMjIuNTU0LDIyLjY5Ny00MS45NjgsMzguOTctNTguMjQ1ICAgIGMxNi4yNzQtMTYuMjY5LDM1LjY5MS0yOS4yNiw1OC4yNDUtMzguOTdjMjIuNTU0LTkuNzA0LDQ2LjIwNS0xNC41NTgsNzAuOTQ4LTE0LjU1OGMyNC43NCwwLDQ4LjM5NSw0Ljg1MSw3MC45NDYsMTQuNTU4ICAgIGMyMi41NTYsOS43MDcsNDEuOTcsMjIuNjk4LDU4LjI0NSwzOC45N2MxNi4yNzIsMTYuMjc0LDI5LjI2LDM1LjY4OCwzOC45NjksNTguMjQ1YzkuNzA5LDIyLjU1NCwxNC41NjQsNDYuMjAxLDE0LjU2NCw3MC45NDggICAgQzQwMi4wMDIsMjQ0LjAxMSwzOTcuMTQzLDI2Ny42NjQsMzg3LjQzNCwyOTAuMjEzeiIgZmlsbD0iI0Q4MDAyNyIvPgoJCTxwYXRoIGQ9Ik0yODQuMzY4LDI1OC42NjhjLTE5LjIxOS0xNC4wODYtNDAuOTI2LTIxLjEyOS02NS4wOTUtMjEuMTI5Yy0yNC4xNzIsMC00NS44NzEsNy4wMzktNjUuMDk2LDIxLjEyOSAgICBjLTE5LjIyNCwxNC4wODUtMzIuMzU4LDMyLjY0MS0zOS4zOTcsNTUuNjcxYy0xLjUyMSw0Ljc1Ny0xLjE0Myw5LjM4MSwxLjE0MSwxMy44NDdjMi4yODYsNC40NjksNS44OTgsNy40NjcsMTAuODUsOC45OTMgICAgYzQuNzU4LDEuNTI2LDkuMzczLDEuMTQzLDEzLjg0Ni0xLjE0NGM0LjQ3MS0yLjI4NSw3LjQ2Ny01Ljg5OSw4Ljk5MS0xMC44NDhjNC43NTktMTUuMjM1LDEzLjU2Mi0yNy41NTYsMjYuNDA5LTM2Ljk3OSAgICBjMTIuODQ3LTkuNDE4LDI3LjI2My0xNC4xMjcsNDMuMjUyLTE0LjEyN2MxNS45ODcsMCwzMC40MTIsNC43MTIsNDMuMjUxLDE0LjEyN2MxMi44NTQsOS40MjQsMjEuNjU1LDIxLjc0NCwyNi40MTIsMzYuOTc5ICAgIGMxLjUyLDQuOTQ4LDQuNTY0LDguNTYyLDkuMTM0LDEwLjg0OGM0LjU2OCwyLjI4Niw5LjIzNiwyLjY3LDEzLjk4OSwxLjE0NGM0Ljc2MS0xLjUyNiw4LjI3OC00LjUyNCwxMC41NjQtOC45OTMgICAgYzIuMjg2LTQuNDY2LDIuNjY5LTkuMDksMS4xNC0xMy44NDdDMzE2LjcyOSwyOTEuMzEyLDMwMy41OTEsMjcyLjc1LDI4NC4zNjgsMjU4LjY2OHoiIGZpbGw9IiNEODAwMjciLz4KCQk8cGF0aCBkPSJNMTQ2LjE4MSwxODIuNzI1YzEwLjA4NSwwLDE4LjY5OS0zLjU3NiwyNS44MzctMTAuNzA5YzcuMTM5LTcuMTM1LDEwLjcwOC0xNS43NDksMTAuNzA4LTI1LjgzNyAgICBjMC0xMC4wODktMy41NjktMTguNjk5LTEwLjcwOC0yNS44MzdzLTE1Ljc1Mi0xMC43MDktMjUuODM3LTEwLjcwOWMtMTAuMDg4LDAtMTguNzAyLDMuNTcxLTI1Ljg0LDEwLjcwOSAgICBjLTcuMTM1LDcuMTM5LTEwLjcwNywxNS43NDktMTAuNzA3LDI1LjgzN2MwLDEwLjA4OCwzLjU2OCwxOC43MDIsMTAuNzA3LDI1LjgzN0MxMjcuNDgyLDE3OS4xNTIsMTM2LjA5MywxODIuNzI1LDE0Ni4xODEsMTgyLjcyNSAgICB6IiBmaWxsPSIjRDgwMDI3Ii8+CgkJPHBhdGggZD0iTTI5Mi4zNTksMTA5LjYzMWMtMTAuMDg5LDAtMTguNzA2LDMuNTcxLTI1Ljg0NSwxMC43MDljLTcuMTMyLDcuMTM5LTEwLjcwOCwxNS43NDktMTAuNzA4LDI1LjgzNyAgICBjMCwxMC4wODgsMy41NzYsMTguNzAyLDEwLjcwOCwyNS44MzdjNy4xMzksNy4xMzcsMTUuNzU2LDEwLjcwOSwyNS44NDUsMTAuNzA5YzEwLjA4MSwwLDE4LjY5OC0zLjU3NiwyNS44MzctMTAuNzA5ICAgIGM3LjEzOS03LjEzNSwxMC43MDgtMTUuNzQ5LDEwLjcwOC0yNS44MzdjMC0xMC4wODktMy41NjktMTguNjk5LTEwLjcwOC0yNS44MzdTMzAyLjQ0LDEwOS42MzEsMjkyLjM1OSwxMDkuNjMxeiIgZmlsbD0iI0Q4MDAyNyIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+             <h4 class="resWrongAsw font-weight-bold ">Тест не пройден!</h4>
+            <%}%>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg text-center">
+            <h3><%=res.countCorrect%> / <%=res.countQuestions%></h3>
+        </div>
+    </div>
+
+    <div class="btn-row row">
+        <div class="col-lg text-center">
+            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Показать ошибки
+            </button>
+
+            <a class="btn btn-warning" href="/testing?inputName=<%= name %>&inputPosition=<%=position %>&select=<%= profNum %>" role="button">
+                Ещё раз
+                <img id="pg_again" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDQ5Ny4yNSA0OTcuMjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5Ny4yNSA0OTcuMjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0idW5kbyI+CgkJPHBhdGggZD0iTTI0OC42MjUsODkuMjVWMGwtMTI3LjUsMTI3LjVsMTI3LjUsMTI3LjVWMTQwLjI1Yzg0LjE1LDAsMTUzLDY4Ljg1LDE1MywxNTNjMCw4NC4xNS02OC44NSwxNTMtMTUzLDE1MyAgICBjLTg0LjE1LDAtMTUzLTY4Ljg1LTE1My0xNTNoLTUxYzAsMTEyLjIsOTEuOCwyMDQsMjA0LDIwNHMyMDQtOTEuOCwyMDQtMjA0UzM2MC44MjUsODkuMjUsMjQ4LjYyNSw4OS4yNXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+            </a>
+
+            <a class="btn btn-warning" href="javascript:(print());" role="button">
+                <img id="pg_again" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE2IDE2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNiAxNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00LDEyLjV2M2g4di0zdi0ySDRWMTIuNXogTTUsMTEuNWg2djFINVYxMS41eiBNNSwxMy41aDZ2MUg1VjEzLjV6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBvbHlnb24gcG9pbnRzPSIxMiwzLjUgMTIsMC41IDQsMC41IDQsMy41IDQsNS41IDEyLDUuNSAgICIgZmlsbD0iIzAwMDAwMCIvPgoJCTxwYXRoIGQ9Ik0xNCwzLjVoLTF2MnYxSDN2LTF2LTJIMmMtMSwwLTIsMS0yLDJ2NWMwLDEsMSwyLDIsMmgxdi0ydi0xaDEwdjF2MmgxYzEsMCwyLTEsMi0ydi01ICAgIEMxNiw0LjUsMTUsMy41LDE0LDMuNXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" /></a>
+
+            <a class="btn btn-warning" href="/" role="button">
+                На главную
+            </a>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg ">
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body  text-muted">
+
+                    <% for (var i=1;i<=res.countQuestions;i++){
+                        if(res['mistake'+i]){ %>
+                        <div class="resItem">
+                        <div class="font-weight-bold"><%=i%>. <%=res['mistake'+i].titleQuestion%> </div>
+                        <% if (res['mistake'+i].userAnswer){%>
+                        <div class="resWrongAsw">Вы ответили: <%=res['mistake'+i].userAnswer%></div>
+                        <%} else{%>
+                        <div class="resWrongAsw">Ответ не был получен!</div>
+                        <%}%>
+                        <div class="resCorrectAsw">Правильный ответ: <%=res['mistake'+i].rightQuestion%></div>
+                        </div>
+                        <%}
+                        }%>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Подключаем jQuery -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- Подключаем Bootstrap JS -->
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

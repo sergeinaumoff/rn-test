@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Аттестация по профессии <%= profa %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="icon" type="image/icon" href="/images/favicon.ico">
+</head>
+<body>
+
+<div class="container col-lg-7">
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
+        <div class="col-lg text-center text-muted">
+            <h6><span class="font-weight-bold" id="timer">20:00</span></h6>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg text-center text-muted">
+            <h6><%= name %>  <%= position %></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg text-center">
+            <h2>Аттестация по профессии <%= profa %></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg text-center">
+            <h4>Билет №<%= ticket.number %></h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg">
+            <form id="testForm" action="/result" method="GET">
+                <input type="hidden" name="profa" value="<%= profa %>">
+                <input type="hidden" name="profNum" value="<%= profNum %>">
+                <input type="hidden" name="ticketNum" value="<%= ticket.number %>">
+                <input type="hidden" name="name" value="<%= name %>">
+                <input type="hidden" name="position" value="<%= position %>">
+
+                <% var countQuestions = Object.keys(ticket).length;%>
+                <% for (var i=1;i<countQuestions;i++){ %>
+
+                <div class="user-card card">
+                    <div class="custom-radio card-body">
+                        <h5 class="card-title font-weight-bold text-justify"><%=i%>. <%=ticket['qustion'+i].title %> </h5>
+
+                        <% var asw = ticket['qustion'+i].answers%>
+                        <% var inn = Object.keys(asw).sort(function (a,b) { //сортируем массив inn из ключей asw
+                            return Math.random()-0.5;
+                        })%>
+
+                        <% for(var item in inn) { ///выводим на экран ответы в порядке сортировки массива inn%>
+
+                        <div class="card-text">
+                            <input class="" type="radio" name="<%=i%>" id="radio<%=inn[item]%>" value="<%=inn[item]%>">
+                            <a class=""><%=asw[inn[item]]%> </a>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning">Проверить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Подключаем jQuery -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- Подключаем Bootstrap JS -->
+<script src="/js/bootstrap.min.js"></script>
+<script>
+    //Timer!!
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.text(minutes + ":" + seconds);
+
+            if (--timer < 0) {
+
+                 timer = duration;
+                //время заканчивается - отправляем ответы
+                document.getElementById('testForm').submit();
+            }
+
+
+             if (timer < 59) {
+                  document.getElementById('timer').style.color = '#FF0000';
+             }
+
+
+
+        }, 1000);
+    }
+    jQuery(function ($) {
+        var fiveMinutes = 60 * 20,
+            display = $('#timer');
+        startTimer(fiveMinutes, display);
+    });
+</script>
+</body>
+</html>

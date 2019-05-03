@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="/css/style.css" >
+      <link rel="icon" type="image/icon" href="/images/favicon.ico">
+  </head>
+  <body>
+
+
+      <div class="container res-cont col-lg-7">
+          <form class="needs-validation" novalidate action="/testing" method="GET">
+              <div class="form-group row justify-content-center">
+                  <div class="col-lg-4 col-md-4 text-center">
+                      <img class="logo" src="/images/logo.png">
+                  </div>
+              </div>
+              <div class="form-group row justify-content-center">
+                  <div class="col-lg-4 col-md-4">
+                      <input type="text" class="form-control" name="inputName" placeholder="Ф.И.О" required>
+                      <div class="invalid-feedback">
+                          Пожалуйста введите имя.
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row justify-content-center">
+                  <div class="col-lg-4 col-md-4">
+                      <input type="text" class="form-control" name="inputPosition" placeholder="Должность" required>
+                      <div class="invalid-feedback">
+                          Пожалуйста введите должность.
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row justify-content-center">
+                  <div class="col-lg-4 col-md-4">
+                      <select class="custom-select mr-lg-2" name="select" required>
+                          <option value="">Выбор теста по профессии</option>
+                          <option value="1">Водитель автомобиля</option>
+                          <option value="2">Слесарь КИПиА</option>
+                          <option value="3">Машинист ППДУ</option>
+                          <option value="4">Оператор по добыче</option>
+                      </select>
+                      <div class="invalid-feedback">
+                          Пожалуйста выберете тест.
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row justify-content-center ">
+                  <div class="col-lg-4 col-md-4 text-center">
+                      <button type="submit" class="btn btn-warning ">Начать тестирование</button>
+
+                  </div>
+              </div>
+          </form>
+
+          <footer class="fixed-bottom text-center">
+              <p>
+                  Made by Сергей Наумов <time datetime="2019">2019</time>
+              </p>
+          </footer>
+      </div>
+
+
+
+
+    <!-- Подключаем jQuery -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!-- Подключаем Bootstrap JS -->
+    <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/js.js"></script>
+  </body>
+</html>

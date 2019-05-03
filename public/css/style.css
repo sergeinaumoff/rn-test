@@ -1,0 +1,113 @@
+body {
+  padding: 50px;
+  line-height: 1.5;
+  font: 16px Helvetica, Arial, sans-serif;
+  color: #2b2b2b;
+  background: url("../images/site_bg.png") 50% 0% no-repeat;
+  background-color: #f8f8f8;
+}
+
+.logo{
+  padding-top: 20px;
+  width: 240px;
+}
+
+#timer{
+
+}
+.cont{
+  height: 100px;
+}
+
+
+.container{
+  margin-top: -50px;
+    margin-bottom: -50px;
+  background-color: #f8f8f8;
+  padding: 0 20px 0 20px;
+}
+
+
+
+.card-body {
+  padding: 20px 30px 5px 30px;
+}
+
+.card-title{
+  color: #2b2b2b;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.card-text {
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+.res-cont{
+  height:100vh
+}
+
+.user-card{
+  margin: 0 0 20px;
+  background-color: #fffaec;
+  border: 2px solid #ffcf00;
+  border-radius: 13px;
+}
+
+#pg_again{
+  padding-bottom: 4px;
+  height: 24px;
+}
+
+.name-row{
+  padding: 30px 0 10px 0;
+}
+
+.ticket-row{
+  padding: 10px 0 10px 0;
+}
+
+.btn-row{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.resItem{
+  padding-bottom: 10px;
+}
+.resWrongAsw{
+  color: #dd0900;
+}
+
+.resCorrectAsw{
+  color: #008000;
+}
+
+a {
+  color: #00B7FF;
+}
+
+footer{
+    color: #aeaeae;
+    font-size: 14px;
+
+}
+
+@media print {
+    /* здесь будут стили для печати */
+    @page {
+        margin-top: 12mm;
+        margin-bottom: 12mm;
+    }
+
+    img {
+        display: none;
+    }
+    .btn-row{
+        display: none;
+    }
+    .row .collapse{
+        display: block;
+    }
+    }
